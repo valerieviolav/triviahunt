@@ -1,0 +1,19 @@
+<!-- triviahunt/templates/create_username.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>Create a Username</h1>
+<form action="" method="POST" id="login-form">{% csrf_token %}
+    <div class="form-group px-3">
+        <label for="username_id"><i class="fas fa-address-card"></i>Choose a username:</label>
+        <input type="text" name="username" id="username_id" class="form-control" required>
+        <div id="message-wrapper"></div>
+    </div>
+    {% if form.errors %}
+          <span class="text-danger"><i class="fas fa-exclamation-circle"></i> That didn't work. Try another name?</span><br>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary" id="login-btn"><i class="fas fa-sign-in-alt"></i><small> SIGN IN</small></button>
+  </form>
+{% endblock %}
